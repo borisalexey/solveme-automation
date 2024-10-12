@@ -1,9 +1,14 @@
 import pytest
 import requests
 
-from configuration import SERVICE_URL2
+from random import randrange
 
-@pytest.fixture(scope="function")
-def get_users():
-    response = requests.get(SERVICE_URL2)
-    return response
+@pytest.fixture()
+def get_number():
+    return randrange(1, 1000, 5)
+
+def _calculate(a, b):
+    return a + b
+@pytest.fixture()
+def calculate():
+    return _calculate

@@ -20,7 +20,7 @@ class Response:
 
     def assert_status_code(self, status_code):
         if isinstance(status_code, list):
-            assert self.response_status in status_code, selfjj
+            assert self.response_status in status_code, self
         else:
             assert self.response_status == status_code, self
         return self
